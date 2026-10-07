@@ -1,103 +1,236 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Student Registration Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration Form</title>
 
-        .container {
-            width: 500px;
-            margin: auto;
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
 
-        h2 {
-            text-align: center;
-            color: #333;
-        }
+body{
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+}
 
-        label {
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
+.container{
+    width:700px;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
 
-        input, select, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#333;
+}
 
-        .gender {
-            width: auto;
-            margin-right: 5px;
-        }
+.form-group{
+    margin-bottom:15px;
+}
 
-        .btn {
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            border: none;
-            margin-top: 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:5px;
+}
 
-        .btn:hover {
-            background-color: #45a049;
-        }
-    </style>
+input,select,textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+.row{
+    display:flex;
+    gap:15px;
+}
+
+.col{
+    flex:1;
+}
+
+.gender,
+.skills{
+    display:flex;
+    gap:15px;
+    margin-top:5px;
+}
+
+.gender input,
+.skills input{
+    width:auto;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+}
+
+.btn{
+    flex:1;
+    padding:12px;
+    border:none;
+    color:white;
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.submit{
+    background:#28a745;
+}
+
+.reset{
+    background:#dc3545;
+}
+
+.btn:hover{
+    opacity:0.9;
+}
+</style>
 </head>
+
 <body>
 
 <div class="container">
-    <h2>Student Registration Form</h2>
+<h2>Student Registration Form</h2>
 
-    <form>
-        <label>Full Name</label>
-        <input type="text" placeholder="Enter your name" required>
+<form>
 
-        <label>Email</label>
-        <input type="email" placeholder="Enter your email" required>
+<div class="row">
+<div class="col">
+<label>Student ID</label>
+<input type="text" placeholder="Enter Student ID">
+</div>
 
-        <label>Phone Number</label>
-        <input type="tel" placeholder="Enter phone number" required>
+<div class="col">
+<label>Full Name</label>
+<input type="text" placeholder="Enter Full Name">
+</div>
+</div>
 
-        <label>Date of Birth</label>
-        <input type="date" required>
+<div class="row">
+<div class="col">
+<label>Father's Name</label>
+<input type="text" placeholder="Enter Father's Name">
+</div>
 
-        <label>Gender</label>
-        <input type="radio" name="gender" class="gender"> Male
-        <input type="radio" name="gender" class="gender"> Female
-        <input type="radio" name="gender" class="gender"> Other
+<div class="col">
+<label>Mother's Name</label>
+<input type="text" placeholder="Enter Mother's Name">
+</div>
+</div>
 
-        <label>Course</label>
-        <select required>
-            <option value="">Select Course</option>
-            <option>B.Tech</option>
-            <option>B.Sc</option>
-            <option>BCA</option>
-            <option>M.Tech</option>
-            <option>MCA</option>
-        </select>
+<div class="row">
+<div class="col">
+<label>Email</label>
+<input type="email" placeholder="Enter Email">
+</div>
 
-        <label>Address</label>
-        <textarea rows="4" placeholder="Enter your address"></textarea>
+<div class="col">
+<label>Phone Number</label>
+<input type="tel" placeholder="Enter Phone Number">
+</div>
+</div>
 
-        <button type="submit" class="btn">Register</button>
-    </form>
+<div class="row">
+<div class="col">
+<label>Date of Birth</label>
+<input type="date">
+</div>
+
+<div class="col">
+<label>Department</label>
+<select>
+<option>Select Department</option>
+<option>CSE</option>
+<option>AIML</option>
+<option>ECE</option>
+<option>EEE</option>
+<option>MECH</option>
+</select>
+</div>
+</div>
+
+<div class="form-group">
+<label>Gender</label>
+<div class="gender">
+<label><input type="radio" name="gender"> Male</label>
+<label><input type="radio" name="gender"> Female</label>
+<label><input type="radio" name="gender"> Other</label>
+</div>
+</div>
+
+<div class="form-group">
+<label>Skills</label>
+<div class="skills">
+<label><input type="checkbox"> Python</label>
+<label><input type="checkbox"> Java</label>
+<label><input type="checkbox"> SQL</label>
+<label><input type="checkbox"> HTML/CSS</label>
+</div>
+</div>
+
+<div class="row">
+<div class="col">
+<label>Semester</label>
+<select>
+<option>Select Semester</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+</select>
+</div>
+
+<div class="col">
+<label>Upload Photo</label>
+<input type="file">
+</div>
+</div>
+
+<div class="form-group">
+<label>Address</label>
+<textarea rows="4" placeholder="Enter Address"></textarea>
+</div>
+
+<div class="row">
+<div class="col">
+<label>Password</label>
+<input type="password" placeholder="Create Password">
+</div>
+
+<div class="col">
+<label>Confirm Password</label>
+<input type="password" placeholder="Confirm Password">
+</div>
+</div>
+
+<br>
+
+<div class="buttons">
+<button type="submit" class="btn submit">Register</button>
+<button type="reset" class="btn reset">Reset</button>
+</div>
+
+</form>
 </div>
 
 </body>
